@@ -6,3 +6,4 @@ bonus :proirity - color
 structure 
 [{id,proirity,Title}]
 
+https://github.com/narnav/HaifaTest.git

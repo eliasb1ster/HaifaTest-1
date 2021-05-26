@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .mydiv{
+        background-color: aqua;
+ width: 400px;
+ height: 300px;
+
+    }
+</style>
+<body>
+
+
+    <script>
+let todos= [
+  {task:"1" , priority: "high", title: "Finance"},
+  {task:"2" , priority: "low", title: "sport"},
+  {task:"3" , priority: "high", title: "marketing"},
+  {task:"4" , priority: "low", title: "Finance"},
+  {task:"5" , priority: "high", title: "sport"},
+  {task:"6" , priority: "high", title: "Finance"},
+  {task:"7" , priority: "low", title: "sport"},
+  {task:"8" , priority: "high", title: "Finance"},
+  {task:"9" , priority: "low", title: "marketing"},
+];
+
+function show (){
+
+    display = document.getElementById("mydiv")
+    //console.log(todos)
+   for (let i = 0; i < todos.length; i++) {
+           display.innerHTML += todos[i].task + ',   priority:   ' +todos[i].priority +',   title:   '+ todos[i].title + "<br>";
+
+   }
+
+
+    
+  }
+
+function add (){
+    show ()
+    addon = document.getElementById("mybutton").innerText
+    todos.push({task: "10", priority: "low", title: "Finance"});
+    console.log(todos)
+    display.innerHTML=""
+    show ()
+
+}
+
+function remove (){
+   
+    x=0
+
+     delete todos[x];
+     x++
+     
+     console.log(todos)
+
+ 
+
+
+}
+
+
+function search (){
+    
+    //addon = document.getElementById("mybutton").innerText
+
+    display = document.getElementById("mydiv")
+
+    input1 =  Number(document.getElementById("myinput").value)
+    value1 =Number(input1) 
+    display.innerHTML += todos[value1].task + ',   priority:   ' +todos[value1].priority +',   title:   '+ todos[value1].title + "<br>";
+
+console.log(todos[value1])
+
+     if(value1 > todos.length ){
+
+        display.innerHTML += todos[value1].task + ',   priority:   ' +todos[value1].priority +',   title:   '+ todos[value1].title + "<br>";
+        
+
+     }
+    
+
+
+}
+
+//end of scrript-----------------------------------------------------------
+    </script>
+
+
+<div id="mydiv" class="mydiv"></div><br><br>
+    <button  onclick="show()">show</button>
+    <button id="mybutton" onclick="add()">add</button>
+    <button onclick="remove()">remove</button><br><br>
+    
+    type the index number then click search<input id="myinput" type="number" > <br>
+    <button id="mybutton2" onclick="search()">search</button><br><br>
+
+
+</body>
+</html>
