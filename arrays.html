@@ -54,8 +54,13 @@ function add (){
 }
 
 function remove (){
-   
+
     document.getElementById("mydiv").innerHTML = "";
+    let position = 0
+    todos.splice(position,1)
+    console.log(todos)
+    show ()
+
 
 }
 
@@ -71,14 +76,7 @@ function search (){
 
 console.log(todos[value1])
 
-     if(value1 > todos.length ){
-
-        display.innerHTML += todos[value1].task + ',   priority:   ' +todos[value1].priority +',   title:   '+ todos[value1].title + "<br>";
-        
-
-     }
     
-
 
 }
 
