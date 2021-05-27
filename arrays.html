@@ -44,22 +44,31 @@ function show (){
   }
 
 function add (){
-    show ()
-    addon = document.getElementById("mybutton").innerText
-    todos.push({task: "10", priority: "low", title: "Finance"});
+    show ()    
+    input1 =  Number(document.getElementById("myinput1").value)
+    input2 =  document.getElementById("myinput2").value
+    input3 =  document.getElementById("myinput3").value
+
+    todos.push({task: input1, priority: input2 , title: input3});
     console.log(todos)
     display.innerHTML=""
-    show ()
+   show ()
+        
 
 }
 
 function remove (){
+   var display=  document.getElementById("mydiv").innerHTML;
 
+    if (display!= ""){
     document.getElementById("mydiv").innerHTML = "";
     let position = 0
     todos.splice(position,1)
     console.log(todos)
     show ()
+
+    }
+    
 
 
 }
@@ -70,11 +79,11 @@ function search (){
     
     display = document.getElementById("mydiv")
 
-    input1 =  Number(document.getElementById("myinput").value)
-    value1 =Number(input1) 
+    input =  Number(document.getElementById("myinput").value)
+    value1 =Number(input) 
     display.innerHTML += todos[value1].task + ',   priority:   ' +todos[value1].priority +',   title:   '+ todos[value1].title + "<br>";
 
-console.log(todos[value1])
+    console.log(todos[value1])
 
     
 
@@ -86,12 +95,17 @@ console.log(todos[value1])
 
 <div id="mydiv" class="mydiv"></div><br><br>
     <button  onclick="show()">show</button>
-    <button id="mybutton" onclick="add()">add</button>
+   
     <button onclick="remove()">remove</button><br><br>
     
-    type the index number then click search<input id="myinput" type="number" > <br>
+    type the index number then click search<input id="myinput" type="number" > 
     <button id="mybutton2" onclick="search()">search</button><br><br>
 
+    please add a task then click add<br>
+    task number <input id="myinput1" type="number" >
+    priority <input id="myinput2"  >
+    title <input id="myinput3"  >
+    <button id="mybutton" onclick="add()">add</button>
 
 </body>
 </html>
